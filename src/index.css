@@ -2,15 +2,148 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+::-webkit-scrollbar{
+    display: none;
+}   
 
 html,body, #root{
     height: 100%;
     width: 100%;
-    background-color: rgb(30, 30, 30);
     color: white;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+    background-color:#2d2b2b;   
+    background-image: url('https://r4.wallpaperflare.com/wallpaper/126/526/555/digital-digital-art-artwork-ninja-sword-hd-wallpaper-cb360c7d23418f59a5f41bd9dd4cccd0.jpg');
+    
+    background-size: cover;
     /* align-items: end; */
 }
 
+main{
+    width: 100%;
+    overflow: scroll;
+    background-color:transparent;
+   
+    height: 80%;
+    /* border: 2px solid red; */
+}
+
+header,footer{
+    background-color:transparent;
+    backdrop-filter: blur(100px);
+    width: 100%;
+    height: 10%;
+    position:absolute;
+    padding: 0 10px;
+}
+
+header{
+    top: 0;
+}
+
+footer{
+    bottom: 0;
+}
+
+.homepage{
+    width: 100%;
+    height: 100%;
+  
+    /* filter: blur(2px); */
+}
+
+.logo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /* width:20%; */
+    height: 100%;
+    gap: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 5px #000000;
+}
+
+.logo img{  
+    width: 50px;
+}
+
+.homepage-content{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.685);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+}
+
+.homepage-content p{
+    color: rgb(211, 211, 211);
+}
+
+.homepage-searchbar{
+    /* border: 2px solid red; */
+    width: 500px;
+    display: flex;
+}
+
+.homepage-searchbar input[type=text]{
+    width: 80%;
+    text-align: center;
+    height: 40px;
+    font-size:20px;
+    position: relative;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.homepage-searchbar input[type=submit]{
+width: 20%;
+height: 40px;
+font-size: 15px;
+border-radius: 10px;
+/* margin-left: -10px; */
+background-color: rgb(238, 11, 11);
+color: white;
+border: none;
+margin-left: 5px;
+z-index: 10;
+
+&:hover{
+    background-color: brown;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:500px) {
+
+    .homepage-searchbar{
+        width: 95%;
+    }
+
+    .homepage-content p{
+        width: 95%;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+}
