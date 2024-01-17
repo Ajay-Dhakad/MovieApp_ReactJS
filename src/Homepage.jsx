@@ -1,4 +1,5 @@
 import React from 'react'
+import Searchbar from './Components/Searchbar'
 
 function Homepage() {
   return (
@@ -7,11 +8,10 @@ function Homepage() {
         <div className="homepage-content">
         <h1>CineScore</h1>
         <p>Your ultimate movie watching guide...</p>
-        <form className="homepage-searchbar">
-        <input placeholder='Enter movie name to search...' type="text" />
-        <input value={'Search'} type="submit" />
-        </form>
+       <Searchbar styles={"homepage-searchbar"} placeholder={'Enter movie name to search...'} btn   />
         </div>
+        
+
     
     </div>
   )

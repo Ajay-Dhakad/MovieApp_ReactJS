@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Homepage from './Homepage.jsx'
+import Search from './Components/Search.jsx'
 
 const router = createBrowserRouter([
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
           {
             path:'/',
             element:<Homepage/>
+          },
+          {
+            path:'/search/:movie',
+            element:<Search/>
           }
 
         ]
