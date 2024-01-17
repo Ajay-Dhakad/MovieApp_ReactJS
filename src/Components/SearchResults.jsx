@@ -12,7 +12,12 @@ function SearchResults({movie}) {
   return (
     <div className="movie-results">
 
-    {movieData?.Search ? <MovieCards data={movieData.Search}/> : <>loading...</>} 
+    {movieData?.Response == 'True' && movieData.Search?.map((movie,index) =>
+    <MovieCards key={movie.imdbID} data={movie}/> ) } 
+
+    {movieData?.Response == 'False' && <>no movies found</>}
+
+    {!movieData && <>loading...</>}
 
 
     </div>

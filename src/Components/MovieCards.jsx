@@ -1,10 +1,16 @@
 import React from 'react'
 
-function movieCards() {
+function movieCards({data}) {
+  console.log(data)
   return (
-    <div>
-      hello
-    </div>
+   <>
+   
+   <div className="movieCard">
+    <h1 key={data.imdbID}>{data.Title}</h1>
+   </div>
+  
+
+   </>
   )
 }
 
