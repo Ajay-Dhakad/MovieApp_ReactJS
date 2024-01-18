@@ -235,7 +235,14 @@ z-index: 10;
     color: white;
 }
 
+.pagesnavigation button:disabled{
+    background-color: #2d2b2b;
+    color: rgb(255, 255, 255);
+}
 
+.pagesnavigation button:disabled:hover{
+    background-color: #2d2b2b;
+}
 
 
 @media (max-width:500px) {
