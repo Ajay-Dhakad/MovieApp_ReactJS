@@ -19,6 +19,8 @@ function SearchResults({movie}) {
 
     {!movieData && <>loading...</>}
 
+    
+
 
     </div>
   )
