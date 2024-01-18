@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-const useMovieData = ({movie,page,movieid}) => {
+const useMovieData = ({movie,currentpage,movieid}) => {
 
     const [moviedata,setmoviedata] = useState(null)
 
@@ -9,11 +9,11 @@ const useMovieData = ({movie,page,movieid}) => {
 
 useEffect(() => {
 
-    fetch(`https://www.omdbapi.com/?apikey=e3da1d7b${movie ? '&s='+movie : ''}${page ? '&page='+page : ''}${movieid ? '&i='+movieid : ''}`)
+    fetch(`https://www.omdbapi.com/?apikey=e3da1d7b${movie ? '&s='+movie : ''}${currentpage ? '&page='+currentpage : ''}${movieid ? '&i='+movieid : ''}`)
     .then((data) => data.ok &&  data.json())
     .then((data) => setmoviedata(data))
 
-},[movie,page,movieid])
+},[movie,currentpage,movieid])
 
 return moviedata;
 

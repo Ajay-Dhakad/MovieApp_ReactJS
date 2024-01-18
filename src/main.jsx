@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             element:<Homepage/>
           },
           {
-            path:'/search/:movie',
+            path:'/search/:movie/page/:currentpage',
             element:<Search/>
           }
 

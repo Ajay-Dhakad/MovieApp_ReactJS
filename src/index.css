@@ -132,7 +132,7 @@ z-index: 10;
 .movie-results{
     width: 100%;
     height: 100%;
-    background-color: rgb(44, 42, 42);
+    background-color: rgb(28, 28, 28);
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -145,14 +145,27 @@ z-index: 10;
 
 .movieCard{
     width: 250px;
+    text-align: center;
     min-height: 400px;
     background-color: rgb(88, 88, 88);
     margin: 10px;
+    border-radius: 10px;
+    transition: .2s;
+    cursor: pointer;
+    overflow: hidden;
     &:hover{
         .movieimage img{
             transform: scale(1.1);
+            
+            
         }
 
+        h1,p{
+            opacity: .7;
+        }
+
+
+      
     }
 }
 
@@ -169,7 +182,58 @@ z-index: 10;
     height: 100%;
 }
 
+.movieCard h1{
+    font-size: 20px;
+    font-family: roboto;
+    padding:0 5px;
+}
 
+.cardcontent{
+    height: 100px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.cardcontent p{
+    /* position: absolute; */
+    bottom: 0;
+    margin-top: 10px;
+}
+
+.pagesnavigation{
+
+    width: 100%;
+    height: 50px;
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 5%;
+
+}
+
+.pagesnavigation button{
+    height: 90%;
+    width: 100px;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+    padding: 0 5px;
+    border-radius: 10px;
+    transition: .3s all;
+    
+}
+
+.pagesnavigation button:nth-child(1):hover{
+    background-color: rgb(238, 11, 11);
+    color: white;
+}
+
+.pagesnavigation button:nth-child(2):hover{
+    background-color: rgb(63, 180, 17);
+    color: white;
+}
 
 
 
