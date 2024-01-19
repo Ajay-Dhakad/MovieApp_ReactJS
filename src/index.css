@@ -41,6 +41,7 @@ header,footer{
     height: 10%;
     position:absolute;
     padding: 0 10px;
+    /* background-color: #585858; */
 }
 
 header{
@@ -147,7 +148,7 @@ z-index: 10;
     width: 250px;
     text-align: center;
     min-height: 400px;
-    background-color: rgb(88, 88, 88);
+    background-color: rgb(20, 20, 20);
     margin: 10px;
     border-radius: 10px;
     transition: .2s;
@@ -256,9 +257,12 @@ a{
     flex-wrap: wrap;
     min-height: 100%;
     gap: 10px;
+    background-size: cover;
+    backdrop-filter: blur(50px);
+    background-repeat: no-repeat;
     height: fit-content;
-    /* background-color: #2d2b2b; */
-    border: 2px solid red;
+    background-color: #00000089;
+    /* border: 2px solid red; */
     padding: 10px 0px;
     /* color: red; */
 }
@@ -281,10 +285,21 @@ a{
     flex-direction: column;
     gap: 10px;
     background-color: #151414;
+    
 }
 
 .moviedetails h1{
-    text-shadow: 2px 2px 10px seashell;
+
+    color: #e3e3e3;
+}
+
+.moviedetails p{
+
+    /* font-size: large; */
+    font-size: 17px;
+    color:#bcbcbc ;
+    /* width: 100%; */
+
 }
 
 
@@ -292,10 +307,11 @@ a{
 
 
 
-@media (max-width:622px) {
+@media (max-width:660px) {
     .moviedetails{
-        width: 95%;
-        padding: 0 5px;
+        width: 100%;
+        padding:5px ;
+        border-radius: 0;
         /* padding: 0 10px; */
         /* text-align: center; */
         /* margin-left: 10%; */
@@ -303,6 +319,8 @@ a{
 .moviedetails h1{
     width: 100%;
     text-align: center;
+    
+    font-size: 23px;
 }
 
 .moviedetails p{
@@ -328,6 +346,15 @@ a{
         font-size: 18px;
         text-align: center;
     }
+
+    .movieCard{
+        width: 80%;
+        /* height: 400px; */
+        
+        /* height: 80%; */
+    }
+
+   
     
 }
 

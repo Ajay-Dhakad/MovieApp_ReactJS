@@ -19,7 +19,9 @@ function movieCards({data }) {
     
 
     <div className="movieimage">
-      <img src={data.Poster != 'N/A' ? data.Poster : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png'} alt="" />
+      <img  
+      
+      src={data.Poster != 'N/A' ? data.Poster : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png'} alt="" />
       </div>
       <div className="cardcontent">
       <h1>{data.Title}</h1>
