@@ -49,7 +49,7 @@ function SearchResults({ movie, currentpage = 1 }) {
 
         {!movieData && <>loading...</>}
 
-        <div className="pagesnavigation">
+        {movieData?.Response != 'False' && movieData?.totalResults > 10 && <div className="pagesnavigation">
           <button
             disabled={page == 1 && true}
             onClick={() => {
@@ -59,12 +59,12 @@ function SearchResults({ movie, currentpage = 1 }) {
           >
             PrevPage
           </button>
-
+            <p>{page}/{totalPages+1}</p>
           <button disabled={page >= totalPages + 1 && true} onClick={NextPage}>
             Nextpage
           </button>
           {/* <button onClick={() => scrollX({top:'1000px'})}></button> */}
-        </div>
+        </div>}
       </div>
     </>
   );
