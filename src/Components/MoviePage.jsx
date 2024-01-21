@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import {useParams} from 'react-router-dom'
+import {useParams,useNavigate} from 'react-router-dom'
 import useMovieData from '../Hooks/useMovieData'
 
 function MoviePage() {
 
     const {movieid} = useParams()
     const [movieData,setmovieData] = useState()
-
+    const [season,setSeason] = useState(null)
+    // const [episode,setEpisode] = useState(null)
+    const [episodeData,setEpisodeData] = useState(null)
+    const navigate = useNavigate()
+    
+    // Fetch the movie data on component mount and save it in state.
+    
     const data = useMovieData({movieid}) 
+
+  
+
 
     useEffect(() => {
 
         if (data) {
             setmovieData(data)
-            console.log(data)
+            console.log(movieData)
         }
 
     },[data])
@@ -29,25 +38,34 @@ function MoviePage() {
            <div className="moviedetails">
             <h1>{movieData.Title}</h1>
 
-                <p><b>Type :</b> {movieData.Type}</p>
-                {movieData?.Type == 'series' &&                 <p><b>Total Seasons :</b> {movieData.totalSeasons}</p>
-}
-                <p><b>Released On :</b> {movieData.Released}</p>
-                <p><b>RunTime :</b> {movieData.Runtime}</p>
-                <p><b>Rating :</b> {movieData.imdbRating}⭐</p>
-                <p><b>Votes : </b>{movieData.imdbVotes}</p>
-                <p><b>Genre : </b>{movieData.Genre}</p>
-                <p><b>Director :</b> {movieData.Director}</p>
-                <p><b>Writer : </b>{movieData.Writer}</p>
-                <p><b>Actors : </b>{movieData.Actors}</p>
-                <p><b>Language :</b> {movieData.Language}</p>
-                <p><b>Awards : </b>{movieData.Awards}</p>
-                <p><b>Country :</b> {movieData.Country}</p>
-                <p id='plot'><b>Plot :</b> {movieData.Plot}</p>
+                {Object.keys(movieData).map((key, i) => movieData[key] !== 'N/A'&& key !== 'Ratings' && key !=='Response' && key !== 'Poster' && key !== 'imdbID' && (
+   
+    <p key={key}>
+      <b>{key} : </b>
+      {`${movieData[key]}`}{key == 'imdbRating' && '⭐'}
+    </p>      
+ 
+))}
+
+
             </div>
+
+           { movieData.Type == 'series' && <div className="totalSeasons">
+            <h2>Seasons</h2>
+            <div className='seasons'>
+            {Array.from({length : movieData?.totalSeasons}).map(( _ ,index) => (
+                <div className="season" key={index}>
+                    <button value={index+1} onClick={(e) =>navigate(`/series/${movieid}/season/${e.target.value}`) } >{index+1} </button>
+                </div>
+            ))}
+            </div>
+          </div>}
+
+
 
            </>
         }
+
 
         </div>
 
