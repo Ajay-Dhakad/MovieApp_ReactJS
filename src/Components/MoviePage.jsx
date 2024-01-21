@@ -6,9 +6,9 @@ function MoviePage() {
 
     const {movieid} = useParams()
     const [movieData,setmovieData] = useState()
-    const [season,setSeason] = useState(null)
+    // const [season,setSeason] = useState(null)
     // const [episode,setEpisode] = useState(null)
-    const [episodeData,setEpisodeData] = useState(null)
+    // const [episodeData,setEpisodeData] = useState(null)
     const navigate = useNavigate()
     
     // Fetch the movie data on component mount and save it in state.
