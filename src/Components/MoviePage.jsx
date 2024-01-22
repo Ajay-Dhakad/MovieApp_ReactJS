@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 import useMovieData from '../Hooks/useMovieData'
 
-function MoviePage() {
+function MoviePage({Episodes}) {
 
+  
     const {movieid} = useParams()
     const [movieData,setmovieData] = useState()
     // const [season,setSeason] = useState(null)
@@ -38,7 +39,7 @@ function MoviePage() {
            <div className="moviedetails">
             <h1>{movieData.Title}</h1>
 
-                {Object.keys(movieData).map((key, i) => movieData[key] !== 'N/A'&& key !== 'Ratings' && key !=='Response' && key !== 'Poster' && key !== 'imdbID' && (
+                {Object.keys(movieData).map((key, i) => movieData[key] !== 'N/A'&& key !== 'Ratings' && key !=='Response' && key !== 'Poster' && key !== 'imdbID' && key !== 'Title' && (
    
     <p key={key}>
       <b>{key} : </b>
@@ -60,8 +61,9 @@ function MoviePage() {
             ))}
             </div>
           </div>}
+          
 
-
+       
 
            </>
         }
