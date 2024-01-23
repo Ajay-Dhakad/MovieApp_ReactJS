@@ -13,7 +13,7 @@ useEffect(() => {
     .then((data) => data.ok &&  data.json())
     .then((data) => setmoviedata(data))
 
-},[movie,currentpage,movieid])
+},[movie,currentpage,movieid,season,episode])
 
 return moviedata;
 
