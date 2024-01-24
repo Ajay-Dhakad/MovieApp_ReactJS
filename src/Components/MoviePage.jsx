@@ -6,14 +6,12 @@ import SeriesPage from './SeriesPage'
 function MoviePage() {
 
   
-    const {movieid,season,episode} = useParams()
-    const [movieData,setmovieData] = useState()
-    // const [season,setSeason] = useState(null)
-    // const [episode,setEpisode] = useState(null)
-    // const [episodeData,setEpisodeData] = useState(null)
+    const {movieid,season} = useParams()
+    const [movieData,setmovieData] = useState(null)
+    const [loading,setloading] = useState(false)
+   
     const navigate = useNavigate()
     
-    // Fetch the movie data on component mount and save it in state.
     
     const data = useMovieData({movieid}) 
 
@@ -21,36 +19,43 @@ function MoviePage() {
 
 
     useEffect(() => {
-
-        if (data) {
+        if (data ) {
 
             setmovieData(data)
-            console.log(movieData)
-            // window.alert('changed')
+            
+            
         }
+        
 
-    },[data])
+
+    },[data,movieid])
 
 
-    function scrollToElement(elementId) {
-      const element = document.getElementById(elementId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
 
-    useEffect(() => {
+    // useEffect(() => {
      
-      scrollToElement('contain')
+     
       
-    }, [movieid]);
+    // }, [movieid]);
 
 
   return  (
     <div className='movie-results' style={{backgroundImage:`url(${movieData?.Poster})`}}>
 
         <div className="moviepage">
-        { movieData ?
+
+
+
+        {
+
+!movieData &&
+  <div className="notfound">
+    <h1>loading...</h1>
+  </div>
+}
+
+
+        { movieData?.Response == 'True' &&
         <>    
            <img id='moviepageposter'  src={movieData?.Poster == 'N/A' ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png' : movieData.Poster} alt="" />
            <div className="moviedetails">
@@ -74,7 +79,7 @@ function MoviePage() {
             {Array.from({length : movieData?.totalSeasons}).map(( _ ,index) => (
                 <div className="season" key={index}>
                     <button value={index+1} onClick={(e) =>navigate(`/movie/${movieid}/season/${e.target.value}`) } >{index+1} </button>
-                </div>
+                </div> 
             ))}
             </div>
 
@@ -97,9 +102,16 @@ function MoviePage() {
 
            </>
 
-           :
-           <h1>loading...</h1>
+        
         }
+
+{
+  movieData?.Response == 'False' &&
+  <div className="notfound">
+    <h1>Movie not found</h1>
+  </div>
+}
+
 
 
         </div>

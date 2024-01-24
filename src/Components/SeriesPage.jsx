@@ -9,19 +9,19 @@ function SeriesPage() {
     const [seriesdata,setseriesdata] = useState(null)
     // const [movieId,setMovieId] = useState(nu)
     // const [Season,setSeason] = useState()
-    const {movieid,season,episode} = useParams()
+    const {movieid,season} = useParams()
     // const episode = '1'
 
-    const data = useMovieData({movieid,season,episode})
+    const data = useMovieData({movieid,season})
 
     useEffect(() => {
 
       
             
             setseriesdata(data)
-            console.log(seriesdata)
+            // console.log(seriesdata)
         
-    },[data,movieid,season,episode])
+    },[data,movieid,season])
   
   if  ( seriesdata?.Response == 'True' &&  seriesdata?.Type != 'Episode') return(
   
@@ -43,7 +43,7 @@ function SeriesPage() {
         <div className="episodes">
         
         {seriesdata?.Episodes?.map((episode, index) => (
-            <div className="episode" key={index}><Link to={`/series/${episode.imdbID}`} >{episode.Title}</Link></div>)) }
+            <div className="episode" key={index}><Link to={`/series/${seriesdata.Title}/${movieid}/season/${season}/episode/${index+1}/total/${seriesdata.Episodes.length}`} >{episode.Title}</Link></div>)) }
 
 </div>
         
@@ -54,14 +54,11 @@ function SeriesPage() {
    
   )
 
+  if (!seriesdata) return <p>loading...</p>
 
-return seriesdata?.Type == 'Episode' && episode && (
 
 
-  <MoviePage/>  
-  
 
-)
 }
 
 export default SeriesPage

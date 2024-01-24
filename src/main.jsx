@@ -7,6 +7,7 @@ import Homepage from './Homepage.jsx'
 import Search from './Components/Search.jsx'
 import MoviePage from './Components/MoviePage.jsx'
 import SeriesPage from './Components/SeriesPage.jsx'
+import EpisodePage from './Components/EpisodePage.jsx'
 
 const router = createBrowserRouter([
 
@@ -29,8 +30,8 @@ const router = createBrowserRouter([
             element:<MoviePage/>
           },  
           { 
-            path:'/series/:movieid',
-            element:<MoviePage/>
+            path:'/series/:seriesname/:movieid/season/:season/episode/:episode/total/:totalepisodes',
+            element: <EpisodePage/>
           }
 
         ]

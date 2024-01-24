@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { Link } from 'react-router-dom'
 
-function movieCards({data }) {
+function movieCards({data}) {
   console.log(data)
   return (
    <>
