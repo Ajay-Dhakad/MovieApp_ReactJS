@@ -7,6 +7,16 @@ function EpisodePage() {
     const {movieid,season,episode,seriesname,totalepisodes} = useParams()
     const [movieData,setmovieData] = useState(null)
     const [loading,setloading] = useState(false)
+  
+
+    useEffect(() => {
+        const top = document.getElementById('top')
+        if (top) {
+        top.scrollIntoView({behavior:'smooth'})
+        console.log(top)
+        }
+    
+      },[episode])
    
     const navigate = useNavigate()
     
@@ -15,8 +25,11 @@ function EpisodePage() {
 
 return (
     <div  style={{backgroundImage:`url(${data?.Poster})`}} className="movie-results">
-        <div id="top"></div>
+
         <div className="moviepage">
+            <div id="top"></div>
+
+
 {data == null &&
     <div className="loading">
         <h1>loading...</h1>
@@ -28,7 +41,7 @@ return (
  
     <div className="episode-card">
 
-     <h1>{seriesname+` S0${season}-E0${episode}`}</h1>
+     <h1 id='top'>{seriesname+` S0${season}-E0${episode}`}</h1>
     <img src={data.Poster !== 'N/A' ? data.Poster : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png'} alt="" /> 
 
     <div className="episode-detail">

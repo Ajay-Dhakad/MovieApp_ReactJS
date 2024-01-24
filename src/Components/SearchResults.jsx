@@ -9,9 +9,6 @@ function SearchResults({ movie, currentpage = 1 }) {
   const [page, setpage] = useState(0);
   console.log(page);
   const [totalPages, settotalPages] = useState(0);
-  // const element = document.getElementById('head')
-  // console.log(element)
-
   const movieData = useMovieData({ movie, currentpage });
 
   console.log(movieData);
@@ -22,12 +19,6 @@ function SearchResults({ movie, currentpage = 1 }) {
     }
   }, [movieData]);
 
-  useEffect(() => {
-    setpage(Number(currentpage));
-    document.getElementById('head').scrollIntoView({ behavior: "smooth" });
-
-  }, [currentpage]);
-
   const NextPage = () => {
     if (page <= totalPages) {
       setpage(page + 1);
@@ -36,11 +27,26 @@ function SearchResults({ movie, currentpage = 1 }) {
     }
   };
 
+
+  useEffect(() => {
+    const top = document.getElementById('top')
+    if (top) {
+    top.scrollIntoView({behavior:'smooth'})
+    console.log(top)
+    }
+
+  },[page])
+
   return (
     <>
-      <div id="head"></div>
+     
+
       <div className="movie-results">
+        
+      <h1 id='top'></h1>
+
         {movieData?.Response == "True" &&
+        
           movieData.Search?.map((movie, index) => (
             <MovieCards key={movie.imdbID} data={movie} />
           ))}

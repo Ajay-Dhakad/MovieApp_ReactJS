@@ -31,6 +31,14 @@ function MoviePage() {
     },[data,movieid])
 
 
+    useEffect(() => {
+      const top = document.getElementById('top')
+      if (top) {
+      top.scrollIntoView({behavior:'smooth'})
+      console.log(top)
+      }
+  
+    },[season])
 
     // useEffect(() => {
      
@@ -85,7 +93,8 @@ function MoviePage() {
 
             {
               season && 
-              <div className="episodes">
+              <div  className="episodes">
+                <div id="top"></div>
 
                   {/* <h2>Episodes of season {season}</h2> */}
 
