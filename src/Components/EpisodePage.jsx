@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import {useParams,useNavigate} from 'react-router-dom'
+import {useParams,useNavigate, Link} from 'react-router-dom'
 import useMovieData from '../Hooks/useMovieData'
 
 function EpisodePage() {
@@ -75,7 +75,7 @@ return (
                 navigate(`/series/${seriesname}/${movieid}/season/${season}/episode/${Number(episode)-1}/total/${totalepisodes}`);
                 }}
             >
-                PrevEpisode
+                {episode != 1 ? 'PrevEpisode' : <Link to={`/movie/${movieid}/season/${season}`}>Go Back</Link> }
             </button>
                 <p>{episode}/{totalepisodes}</p>
             <button disabled={episode == totalepisodes} onClick={() => {
