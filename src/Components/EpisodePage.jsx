@@ -29,7 +29,8 @@ return (
     <div className="episode-card">
 
      <h1>{seriesname+` S0${season}-E0${episode}`}</h1>
-    <img src={data.Poster} alt="" /> 
+    <img src={data.Poster !== 'N/A' ? data.Poster : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/832px-No-Image-Placeholder.svg.png'} alt="" /> 
+
     <div className="episode-detail">
         <h1>{data.Title}</h1>
         {Object.keys(data).map(( key, i) => data[key] !== 'N/A'&& key !== 'Ratings' && key !=='Response' && key !== 'Poster' && key !== 'imdbID' && key !== 'Title' && key !== 'Title' && key !== 'seriesID' &&  (
@@ -41,12 +42,6 @@ return (
 
 ))}
     </div>
-
-  
-    
-         
-
-
 
     </div>
 

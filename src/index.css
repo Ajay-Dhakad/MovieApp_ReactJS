@@ -256,6 +256,7 @@ a{
     width: 100%;
     flex-wrap: wrap;
     min-height: 100%;
+    overflow: scroll;
     gap: 10px;
     /* overflow-x: hidden; */
     background-size: cover;
