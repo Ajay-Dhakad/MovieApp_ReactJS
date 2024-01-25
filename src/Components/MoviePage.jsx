@@ -51,15 +51,10 @@ function MoviePage() {
     <div className='movie-results' style={{backgroundImage:`url(${movieData?.Poster})`}}>
 
         <div className="moviepage">
-
-
-
         {
 
 !movieData &&
-  <div className="notfound">
-    <h1>loading...</h1>
-  </div>
+<div className="loader-container"><div className="loader"></div></div>
 }
 
 

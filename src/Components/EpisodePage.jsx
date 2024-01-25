@@ -23,6 +23,15 @@ function EpisodePage() {
     const data = useMovieData({movieid,season,episode})
 
 
+  if  (data == null)  return(
+        
+    
+
+    <div className='movie-results'> <div className="loader-container"><div className="loader"></div></div></div>
+
+    )
+
+
 return (
     <div  style={{backgroundImage:`url(${data?.Poster})`}} className="movie-results">
 
@@ -30,11 +39,6 @@ return (
             <div id="top"></div>
 
 
-{data == null &&
-    <div className="loading">
-        <h1>loading...</h1>
-    </div>
-}
 
 
 {data?.Response == 'True' &&

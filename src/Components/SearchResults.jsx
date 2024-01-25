@@ -32,7 +32,6 @@ function SearchResults({ movie, currentpage = 1 }) {
     const top = document.getElementById('top')
     if (top) {
     top.scrollIntoView({behavior:'smooth'})
-    console.log(top)
     }
 
   },[page,movie])
@@ -53,7 +52,7 @@ function SearchResults({ movie, currentpage = 1 }) {
 
         {movieData?.Response == "False" && <>no movies found</>}
 
-        {!movieData && <>loading...</>}
+        {!movieData && <><div className="loader-container"><div className="loader"></div></div></>}
 
         {movieData?.Response != 'False' && movieData?.totalResults > 10 && <div className="pagesnavigation">
           <button
