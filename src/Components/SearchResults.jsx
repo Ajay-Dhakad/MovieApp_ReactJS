@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 function SearchResults({ movie, currentpage = 1 }) {
   const navigate = useNavigate();
 
-  const [page, setpage] = useState(0);
+  const [page, setpage] = useState(1);
   console.log(page);
-  const [totalPages, settotalPages] = useState(0);
+  const [totalPages, settotalPages] = useState(1);
   const movieData = useMovieData({ movie, currentpage });
 
   console.log(movieData);
@@ -35,7 +35,7 @@ function SearchResults({ movie, currentpage = 1 }) {
     console.log(top)
     }
 
-  },[page])
+  },[page,movie])
 
   return (
     <>
