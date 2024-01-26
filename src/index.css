@@ -593,6 +593,7 @@ header i{
         padding:20px 0px;
         gap: 20px;
         justify-content: start;
+
         animation-name: menu;
         animation-duration: .5s;
         animation-iteration-count: 1;
@@ -628,20 +629,21 @@ header i{
         /* border-bottom: 2px solid #e3e3e3; */
         outline: none;
         font-size: 20px;
+        margin-right: 5px;
         color: #e3e3e3;
-        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.674);
         backdrop-filter: blur(30px);
         border-radius: 10px;
     }
 
     .phonenav input[type=submit]{
 
-        width: 25%;
+        /* width: 20%; */
         height: 45px;
         background-color: red;
         border-radius: 10px;
         color: white;
-        /* padding: 0 5px; */
+        padding: 0 5px;
         border: none;
         font-size: 20px;
     }

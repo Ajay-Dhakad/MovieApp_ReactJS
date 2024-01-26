@@ -6,7 +6,6 @@ function EpisodePage() {
 
     const {movieid,season,episode,seriesname,totalepisodes} = useParams()
     const [movieData,setmovieData] = useState(null)
-    const [loading,setloading] = useState(false)
   
 
     useEffect(() => {
@@ -87,7 +86,6 @@ return (
             }}>
                 NextEpisode
             </button>
-            {/* <button onClick={() => scrollX({top:'1000px'})}></button> */}
             </div>}
 
 
