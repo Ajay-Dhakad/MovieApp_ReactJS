@@ -630,7 +630,7 @@ header i{
         outline: none;
         font-size: 20px;
         margin-right: 5px;
-        color: #e3e3e3;
+        color: #e3e3e3; 
         background-color: rgba(0, 0, 0, 0.674);
         backdrop-filter: blur(30px);
         border-radius: 10px;

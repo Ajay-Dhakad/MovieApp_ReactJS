@@ -35,7 +35,7 @@ function MoviePage() {
       const top = document.getElementById('top')
       if (top) {
       top.scrollIntoView({behavior:'smooth'})
-      console.log(top)
+      // console.log(top)
       }
   
     },[season])
