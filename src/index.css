@@ -19,7 +19,8 @@ html,body, #root{
     justify-content: center; 
     position: relative;
     background-color:#2d2b2b;   
-    background-image: url('https://r4.wallpaperflare.com/wallpaper/126/526/555/digital-digital-art-artwork-ninja-sword-hd-wallpaper-cb360c7d23418f59a5f41bd9dd4cccd0.jpg');
+    background-image: url('/src/assets/poster.jpg');
+    /* background-image: url('https://r4.wallpaperflare.com/wallpaper/126/526/555/digital-digital-art-artwork-ninja-sword-hd-wallpaper-cb360c7d23418f59a5f41bd9dd4cccd0.jpg'); */
     
     background-size: cover;
     /* align-items: end; */
@@ -37,7 +38,7 @@ main{
 
 header,footer{
     background-color:transparent;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(50px);
     width: 100%;
     height: 10%;
     position:absolute;
@@ -138,12 +139,12 @@ footer{
 }
 
 .logo img{  
-    width: 50px;
+    width: 40px;
 }
 
 .homepage-content{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.685);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.425),rgb(0, 0, 0));
     height: 100%;
     display: flex;
     justify-content: center;
