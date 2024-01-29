@@ -82,7 +82,7 @@ function MoviePage() {
             <h2>Seasons</h2>
             <div className='seasons'>
             {Array.from({length : movieData?.totalSeasons}).map(( _ ,index) => (
-                <motion.div initial={{opacity:0,translateY:index % 2 == 0 ? -5 : 5}} whileInView={{opacity:1,translateY:0}} transition={{delay:index*.06,duration:.2}} className="season" key={index}>
+                <motion.div initial={{opacity:0,translateY:index % 2 == 0 ? -5 : 5}} whileInView={{opacity:1,translateY:0}} transition={{delay:index*.06,duration:.2}} viewport={{once:true}} className="season" key={index}>
                     <button value={index+1} onClick={(e) =>navigate(`/movie/${movieid}/season/${e.target.value}`) } >{index+1} </button>
                 </motion.div> 
             ))}
