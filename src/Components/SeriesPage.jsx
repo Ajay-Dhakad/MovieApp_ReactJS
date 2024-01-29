@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useParams,useNavigate,Link} from 'react-router-dom'
 import useMovieData from '../Hooks/useMovieData'
 import MoviePage from './MoviePage'
-
+import {motion} from 'framer-motion'
 
 
 function SeriesPage() {
@@ -43,7 +43,7 @@ function SeriesPage() {
         <div className="episodes">
         
         {seriesdata?.Episodes?.map((episode, index) => (
-            <div className="episode" key={index}><Link to={`/series/${seriesdata.Title}/${movieid}/season/${season}/episode/${index+1}/total/${seriesdata.Episodes.length}`} >{episode.Title}</Link></div>)) }
+            <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:index*.1}} className="episode" key={index}><Link to={`/series/${seriesdata.Title}/${movieid}/season/${season}/episode/${index+1}/total/${seriesdata.Episodes.length}`} >{episode.Title}</Link></motion.div>)) }
 
 </div>
         

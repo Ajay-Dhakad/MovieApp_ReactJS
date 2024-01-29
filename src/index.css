@@ -217,6 +217,13 @@ z-index: 10;
     align-items: center;
 }
 
+.movie-results .searchresultcount{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #272727;
+}
+
 
 .movieCard{
     width: 250px;

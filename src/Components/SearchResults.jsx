@@ -45,11 +45,20 @@ function SearchResults({ movie, currentpage = 1 }) {
       <h1 id='top'></h1>
 
         {movieData?.Response == "True" &&
-        
+
+          <>
+         { page == 1 && <div className="searchresultcount"><p>Results found for <b>{movie}</b></p></div>}
+          {
           movieData.Search?.map((movie, index) => (
             <MovieCards key={movie.imdbID} data={movie} />
-          ))}
+            
+          ))
+        }
 
+          </>
+          
+          }
+            
         {movieData?.Response == "False" && <div className="loader-container">No Movies Found For {movie}</div>}
 
         {!movieData && <div className="loader-container"><div className="loader"></div></div> }

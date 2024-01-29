@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import {useParams,useNavigate} from 'react-router-dom'
 import useMovieData from '../Hooks/useMovieData'
 import SeriesPage from './SeriesPage'
+import {motion} from 'framer-motion'
+
 
 function MoviePage() {
 
@@ -80,9 +82,9 @@ function MoviePage() {
             <h2>Seasons</h2>
             <div className='seasons'>
             {Array.from({length : movieData?.totalSeasons}).map(( _ ,index) => (
-                <div className="season" key={index}>
+                <motion.div initial={{opacity:0,translateY:index % 2 == 0 ? -5 : 5}} animate={{opacity:1,translateY:0}} transition={{delay:index*.06,duration:.2}} className="season" key={index}>
                     <button value={index+1} onClick={(e) =>navigate(`/movie/${movieid}/season/${e.target.value}`) } >{index+1} </button>
-                </div> 
+                </motion.div> 
             ))}
             </div>
             
