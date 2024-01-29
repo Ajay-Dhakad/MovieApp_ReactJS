@@ -50,9 +50,9 @@ function SearchResults({ movie, currentpage = 1 }) {
             <MovieCards key={movie.imdbID} data={movie} />
           ))}
 
-        {movieData?.Response == "False" && <>no movies found</>}
+        {movieData?.Response == "False" && <div className="loader-container">No Movies Found For {movie}</div>}
 
-        {!movieData && <><div className="loader-container"><div className="loader"></div></div></>}
+        {!movieData && <div className="loader-container"><div className="loader"></div></div> }
 
         {movieData?.Response != 'False' && movieData?.totalResults > 10 && <div className="pagesnavigation">
           <button

@@ -17,7 +17,7 @@ function Header() {
   
     <header>
         <div className="logo">
-            <img src="https://clipart-library.com/images/8czn5zKKi.png" alt="" />
+            <img src="https://cdn1.iconfinder.com/data/icons/music-media-2/512/614731-cinema-512.png" alt="" />
             <h1>CineScore</h1>
         </div>
 

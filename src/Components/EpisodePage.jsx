@@ -65,9 +65,9 @@ return (
 }
 
   {data?.Response == 'False' &&
-    <div className="notfound">
-      <h1>Movie not found</h1>
-    </div>}
+
+<div className="loader-container">No Data Found</div>
+  }
     
     
     {data?.Response == 'True' &&    <div className="pagesnavigation">

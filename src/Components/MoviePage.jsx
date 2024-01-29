@@ -85,7 +85,7 @@ function MoviePage() {
                 </div> 
             ))}
             </div>
-
+            
             {
               season && 
               <div  className="episodes">
@@ -111,9 +111,7 @@ function MoviePage() {
 
 {
   movieData?.Response == 'False' &&
-  <div className="notfound">
-    <h1>Movie not found</h1>
-  </div>
+  <div className="loader-container">No Data Found </div>
 }
 
 

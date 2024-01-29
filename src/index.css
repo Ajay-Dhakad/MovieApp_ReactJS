@@ -535,7 +535,7 @@ header i{
 @media (max-width:660px) {
     .moviedetails{
         width: 100%;
-        padding:5px ;
+        padding:5px;
         border-radius: 0;
         overflow:visible;
         height: fit-content;
