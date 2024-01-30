@@ -31,7 +31,7 @@ function Header() {
           
 }
 
-<i  onClick={() => (menu ? setmenu(false) : setmenu(true))} class={!menu ? 'ri-menu-line' : 'ri-close-fill'}></i>
+<i  onClick={() => (menu ? setmenu(false) : setmenu(true))} className={!menu ? 'ri-menu-line' : 'ri-close-fill'}></i>
 
     </header>
  <div style={{display:menu ? 'flex':'none'}} className="phonenav">

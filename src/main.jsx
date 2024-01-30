@@ -6,8 +6,9 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Homepage from './Homepage.jsx'
 import Search from './Components/Search.jsx'
 import MoviePage from './Components/MoviePage.jsx'
-import SeriesPage from './Components/SeriesPage.jsx'
+// import SeriesPage from './Components/SeriesPage.jsx'
 import EpisodePage from './Components/EpisodePage.jsx'
+import UrlNotFound from './Components/UrlNotFound.jsx'
 
 const router = createBrowserRouter([
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
           { 
             path:'/series/:seriesname/:movieid/season/:season/episode/:episode/total/:totalepisodes',
             element: <EpisodePage/>
+          },
+          {
+            path:'*',
+            element:<UrlNotFound/>
           }
 
         ]
