@@ -6,16 +6,14 @@ import { useNavigate } from "react-router-dom";
 function SearchResults({ movie,currentpage }) {
   const navigate = useNavigate();
 
-  // const [page, setpage] = useState();
-  // console.log(page);
   const [totalPages, settotalPages] = useState(1);
   const movieData = useMovieData({ movie, currentpage });
-
-  console.log(movieData);
-
+  
   useEffect(() => {
     if (movieData) {
+
       settotalPages(Math.floor(movieData.totalResults / 10));
+
     }
   }, [movieData]);
 
@@ -49,7 +47,7 @@ function SearchResults({ movie,currentpage }) {
         {movieData?.Response == "True" &&
 
           <>
-         { currentpage == 1 && <div className="searchresultcount"><p>Results found for <b>{movie}</b></p></div>}
+         { currentpage == 1 && <div className="searchresultcount"><p>{movieData.totalResults} Results found for <b>{movie}</b></p></div>}
           {
           movieData.Search?.map((movie, index) => (
             <MovieCards key={movie.imdbID} data={movie} />

@@ -10,7 +10,7 @@ const [search,setsearch] = useState('')
     const handlesubmit = (e) => {
 
         e.preventDefault();
-        navigate(`/search/${search}/page/1`);
+        navigate(`/search/${search.replace('  ',' ').trim()}/page/1`);
         setsearch('')
 
 

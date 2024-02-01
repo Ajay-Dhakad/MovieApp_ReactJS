@@ -13,11 +13,13 @@ function Header() {
 
   },[pathname])
 
-  return (<>
-  
+  return (
+    
+  <>
+    
     <header>
         <div className="logo">
-            <img src="https://cdn1.iconfinder.com/data/icons/music-media-2/512/614731-cinema-512.png" alt="" />
+            <img id='headerlogoimg' src="https://cdn1.iconfinder.com/data/icons/music-media-2/512/614731-cinema-512.png" alt="" />
             <h1>CineScore</h1>
         </div>
 
@@ -40,6 +42,7 @@ function Header() {
       </div>
     
     </>
+
   )
 }
 

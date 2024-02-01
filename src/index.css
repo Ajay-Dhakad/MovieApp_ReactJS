@@ -112,12 +112,29 @@ header .searchbar input[type=submit]{
     display: none;
 }
 
+
+#headerlogoimg{
+
+    animation:  logorotation 3s 1 ease-in-out ;
+}
+
+@keyframes logorotation { 
+
+    from{
+        scale: .75;
+    }
+    to{
+        rotate: -360deg;
+    }
+}
+
 footer{
     bottom: 0;
     display:flex;
     align-items:center;
     justify-content:center;
-    /* flex-direction: column; */
+    flex-direction: column;
+    gap: 5px;
 
 
 }
@@ -186,7 +203,8 @@ footer{
 .homepage-searchbar input[type=submit]{
 width: 20%;
 height: 40px;
-font-size: 15px;
+font-size: 17px;
+font-weight: bold;
 border-radius: 10px;
 /* margin-left: -10px; */
 background-color: rgb(238, 11, 11);

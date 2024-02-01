@@ -3,9 +3,7 @@ import React from 'react'
 function Footer() {
   return (
    <footer>
-    <div className="devsocials">
-   <img src="" alt="" /><img src="" alt="" /><img src="" alt="" />
-    </div>
+    <a style={{opacity:.8}} target='_blank' href='https://github.com/Ajay-dhakad'><b>&lt;</b>Developer❤️<b>/&gt;</b></a>
 <p>©2022 Cinescore,All Rights Reserved </p>
     
    </footer>
