@@ -6,7 +6,7 @@ import SearchResults from './SearchResults'
 function Search() {
     const {movie} = useParams()
     const {currentpage} = useParams()
-    console.log(currentpage)
+    // console.log(currentpage)
     
 
     

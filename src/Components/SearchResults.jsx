@@ -3,11 +3,11 @@ import useMovieData from "../Hooks/useMovieData";
 import MovieCards from "./MovieCards.jsx";
 import { useNavigate } from "react-router-dom";
 
-function SearchResults({ movie, currentpage = 1 }) {
+function SearchResults({ movie,currentpage }) {
   const navigate = useNavigate();
 
-  const [page, setpage] = useState(1);
-  console.log(page);
+  // const [page, setpage] = useState();
+  // console.log(page);
   const [totalPages, settotalPages] = useState(1);
   const movieData = useMovieData({ movie, currentpage });
 
@@ -20,21 +20,23 @@ function SearchResults({ movie, currentpage = 1 }) {
   }, [movieData]);
 
   const NextPage = () => {
-    if (page <= totalPages) {
-      setpage(page + 1);
-      navigate(`/search/${movie}/page/${String(page + 1)}`);
+    if (currentpage <= totalPages) {
+      // setpage(page + 1);
+      navigate(`/search/${movie}/page/${Number(currentpage) + 1}`);
 
     }
   };
 
 
   useEffect(() => {
+    // setpage(currentpage)
     const top = document.getElementById('top')
+    
     if (top) {
     top.scrollIntoView({behavior:'smooth'})
     }
 
-  },[page,movie])
+  },[movie,currentpage])
 
   return (
     <>
@@ -47,7 +49,7 @@ function SearchResults({ movie, currentpage = 1 }) {
         {movieData?.Response == "True" &&
 
           <>
-         { page == 1 && <div className="searchresultcount"><p>Results found for <b>{movie}</b></p></div>}
+         { currentpage == 1 && <div className="searchresultcount"><p>Results found for <b>{movie}</b></p></div>}
           {
           movieData.Search?.map((movie, index) => (
             <MovieCards key={movie.imdbID} data={movie} />
@@ -65,16 +67,17 @@ function SearchResults({ movie, currentpage = 1 }) {
 
         {movieData?.Response != 'False' && movieData?.totalResults > 10 && <div className="pagesnavigation">
           <button
-            disabled={page == 1 && true}
+            disabled={currentpage == 1 && true}
             onClick={() => {
-              page > 1 && setpage(page - 1);
-              navigate(`/search/${movie}/page/${String(page - 1)}`);
+              // page > 1 && setpage(page - 1);
+              if (currentpage >= 1) navigate(`/search/${movie}/page/${String(currentpage - 1)}`);
+            
             }}
           >
             PrevPage
           </button>
-            <p>{page}/{totalPages+1}</p>
-          <button disabled={page >= totalPages + 1 && true} onClick={NextPage}>
+            <p>{currentpage}/{totalPages+1}</p>
+          <button disabled={currentpage >= totalPages + 1 && true} onClick={NextPage}>
             Nextpage
           </button>
           {/* <button onClick={() => scrollX({top:'1000px'})}></button> */}
