@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       {
         path: "/search/:movie/page/:currentpage",
         element: <Search />,
-      },
+      },  
       {
         path: "/movie/:movieid/season?/:season?",
         element: <MoviePage />,

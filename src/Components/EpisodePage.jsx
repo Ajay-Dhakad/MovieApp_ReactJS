@@ -6,7 +6,7 @@ function EpisodePage() {
   const { movieid, season, episode, seriesname, totalepisodes } = useParams();
   const [movieData, setmovieData] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => { 
     const top = document.getElementById("top");
     //
     if (top) {

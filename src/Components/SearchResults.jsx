@@ -33,7 +33,7 @@ function SearchResults({ movie, currentpage }) {
 
   return (
     <>
-      <div className="movie-results">
+      <div className="movie-results" >
         <h1 id="top"></h1>
 
         {movieData?.Response == "True" && (
