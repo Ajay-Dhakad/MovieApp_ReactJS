@@ -1,5 +1,6 @@
 import React from "react";
 import Searchbar from "./Components/Searchbar";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -12,7 +13,16 @@ function Homepage() {
           placeholder={"Enter movie name to search..."}
           btn
         />
-      </div>
+        <p style={{marginTop:'10px'}}>Popular Picks</p>
+        <div className="popularpicks">
+          
+        <Link to={'/search/John wick/page/1'}><button>John wick</button></Link>
+        <Link to={'/search/Avengers/page/1'}><button>Avengers</button></Link>
+        <Link to={'/search/Game of Thrones/page/1'}><button>Game of Thrones</button></Link>
+        <Link to={'/search/Star Wars/page/1'}><button>Star Wars</button></Link>
+        <Link to={'/search/Naruto/page/1'}><button>Naruto</button></Link>
+        </div>
+      </div>  
     </div>
   );
 }
