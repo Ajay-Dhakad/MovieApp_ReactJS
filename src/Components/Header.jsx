@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Searchbar from "./Searchbar";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 function Header() {
   const { pathname } = useLocation();
@@ -20,7 +20,7 @@ function Header() {
             src="https://cdn1.iconfinder.com/data/icons/music-media-2/512/614731-cinema-512.png"
             alt=""
           />
-          <h1>CineScore</h1>
+          <h1><Link to={'/'}> CineScore</Link></h1>
         </div>
 
         {pathname !== "/" && (
