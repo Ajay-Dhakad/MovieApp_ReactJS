@@ -11,7 +11,7 @@ function Homepage() {
         <Searchbar
           styles={"homepage-searchbar"}
           placeholder={"Enter movie name to search..."}
-          btns
+          btn
         />
         <p style={{marginTop:'10px'}}>Popular Picks</p>
         <div className="popularpicks">
