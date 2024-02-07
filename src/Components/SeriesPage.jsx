@@ -24,7 +24,6 @@ function SeriesPage() {
         {/* <h1>season = {season}</h1> */}
 
         <>
-          {console.log(seriesdata)}
 
           <h2>{seriesdata.Title + ` Season ${season}`}</h2>
           {/* <p>Season : {seriesdata.Season}</p> */}

@@ -65,11 +65,11 @@ function MoviePage() {
                   key !== "Poster" &&
                   key !== "imdbID" &&
                   key !== "Title" && (
-                    <p key={key}>
+                    <motion.p initial={{opacity:0,translateY:10}} whileInView={{opacity:1,translateY:0}} viewport={{once:true}} transition={{duration:.2,delay:.01*i}} key={key}>
                       <b>{key} : </b>
                       {`${movieData[key]}`}
                       {key == "imdbRating" && "⭐"}
-                    </p>
+                    </motion.p>
                   )
               )}
             </div>

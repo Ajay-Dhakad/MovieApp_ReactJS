@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import useMovieData from "../Hooks/useMovieData";
+import {motion} from 'framer-motion'
 
 function EpisodePage() {
   const { movieid, season, episode, seriesname, totalepisodes } = useParams();
@@ -11,7 +12,6 @@ function EpisodePage() {
     //
     if (top) {
       top.scrollIntoView({ behavior: "smooth" });
-      console.log(top);
     }
   }, [episode]);
 
@@ -61,11 +61,11 @@ function EpisodePage() {
                   key !== "Title" &&
                   key !== "Title" &&
                   key !== "seriesID" && (
-                    <p key={key}>
+                    <motion.p initial={{opacity:0,translateY:10}} whileInView={{opacity:1,translateY:0}} viewport={{once:true}} transition={{duration:.2,delay:.01*i}} key={key}>
                       <b>{key} : </b>
                       {`${data[key]}`}
                       {key == "imdbRating" && "⭐"}
-                    </p>
+                    </motion.p>
                   )
               )}
             </div>
