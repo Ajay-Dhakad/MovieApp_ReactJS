@@ -11,7 +11,7 @@ function Homepage() {
         <Searchbar
           styles={"homepage-searchbar"}
           placeholder={"Enter movie name to search..."}
-          btns
+          btn
         />
         <p style={{marginTop:'10px'}}>Popular Picks</p>
         <div className="popularpicks">
@@ -22,7 +22,7 @@ function Homepage() {
         <Link to={'/search/Star Wars/page/1'}><button>Star Wars</button></Link>
         <Link to={'/search/Naruto/page/1'}><button>Naruto</button></Link>
         </div>
-      </div>    
+      </div>  
     </div>
   );
 }
