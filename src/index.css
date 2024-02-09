@@ -554,6 +554,7 @@ header i {
   border-radius: 10px;
 }
 
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;
@@ -613,6 +614,7 @@ header i {
   .phonenav {
     /* display: block; */
     position: absolute;
+    
     top: 10%;
     right: 0;
     background-color: transparent;
@@ -621,7 +623,6 @@ header i {
     width: 100%;
     flex-direction: column;
     height: 80%;
-    display: flex;
     align-items: center;
     /* transition: .5s; */
     padding: 20px 0px;
